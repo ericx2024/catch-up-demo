@@ -5,15 +5,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {HttpClientModule} from "@angular/common/http";
+import { ArticleListComponent } from './news/components/article-list/article-list.component';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardTitleGroup
+} from "@angular/material/card";
+import {MatAnchor, MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCard,
+    MatCardTitleGroup,
+    MatCardHeader,
+    MatCardImage,
+    MatCardContent,
+    MatCardActions,
+    MatAnchor,
+    MatIconButton,
+    MatIcon
   ],
   providers: [
     provideAnimationsAsync()
