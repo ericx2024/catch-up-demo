@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { ArticleListComponent } from './news/components/article-list/article-list.component';
 import {
   MatCardModule,
@@ -23,7 +23,12 @@ import {MatMenuModule} from "@angular/material/menu";
 import {NgOptimizedImage} from "@angular/common";
 import { LanguageSwitcherComponent } from './public/components/language-switcher/language-switcher.component';
 import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
-import {TranslateModule} from "@ngx-translate/core";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -49,7 +54,15 @@ import {TranslateModule} from "@ngx-translate/core";
     NgOptimizedImage,
     MatButtonToggleGroup,
     MatButtonToggle,
-    TranslateModule
+    NgOptimizedImage,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     provideAnimationsAsync()
