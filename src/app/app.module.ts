@@ -7,36 +7,42 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {HttpClientModule} from "@angular/common/http";
 import { ArticleListComponent } from './news/components/article-list/article-list.component';
 import {
-  MatCard,
-  MatCardActions,
-  MatCardContent,
-  MatCardHeader,
-  MatCardImage,
-  MatCardTitleGroup
+  MatCardModule,
+
 } from "@angular/material/card";
-import {MatAnchor, MatIconButton} from "@angular/material/button";
-import {MatIcon} from "@angular/material/icon";
+import { MatButtonModule} from "@angular/material/button";
+import { MatIconModule} from "@angular/material/icon";
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
+import { SideNavigationBarComponent } from './public/components/side-navigation-bar/side-navigation-bar.component';
+import { MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {LayoutModule} from "@angular/cdk/layout";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatMenuModule} from "@angular/material/menu";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
-    FooterContentComponent
+    FooterContentComponent,
+    SideNavigationBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatCard,
-    MatCardTitleGroup,
-    MatCardHeader,
-    MatCardImage,
-    MatCardContent,
-    MatCardActions,
-    MatAnchor,
-    MatIconButton,
-    MatIcon
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    NgOptimizedImage
   ],
   providers: [
     provideAnimationsAsync()

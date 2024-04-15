@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Article} from "../../model/article.entity";
 
 @Component({
   selector: 'app-article-list',
