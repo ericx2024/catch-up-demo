@@ -21,13 +21,17 @@ import {LayoutModule} from "@angular/cdk/layout";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgOptimizedImage} from "@angular/common";
+import { LanguageSwitcherComponent } from './public/components/language-switcher/language-switcher.component';
+import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
     FooterContentComponent,
-    SideNavigationBarComponent
+    SideNavigationBarComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,10 @@ import {NgOptimizedImage} from "@angular/common";
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatButtonToggleGroup,
+    MatButtonToggle,
+    TranslateModule
   ],
   providers: [
     provideAnimationsAsync()
