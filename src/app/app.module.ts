@@ -16,11 +16,13 @@ import {
 } from "@angular/material/card";
 import {MatAnchor, MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    FooterContentComponent
   ],
   imports: [
     BrowserModule,
