@@ -19,6 +19,6 @@ export class NewsApiService {
   }
 
   initArticles() {
-    return this.getArticlesBySourceId('bbc-news');
+    return this.getArticlesBySourceId('abc-news-au');
   }
 }
